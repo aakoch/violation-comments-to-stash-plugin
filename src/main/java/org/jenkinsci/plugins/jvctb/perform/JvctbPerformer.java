@@ -10,6 +10,7 @@ import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConf
 import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConfigHelper.FIELD_CREATESINGLEFILECOMMENTS;
 import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConfigHelper.FIELD_CREDENTIALSID;
 import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConfigHelper.FIELD_KEEP_OLD_COMMENTS;
+import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConfigHelper.FIELD_LOG_FILES;
 import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConfigHelper.FIELD_MINSEVERITY;
 import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConfigHelper.FIELD_PROJECTKEY;
 import static org.jenkinsci.plugins.jvctb.config.ViolationsToBitbucketServerConfigHelper.FIELD_PULLREQUESTID;
@@ -51,6 +52,7 @@ import se.bjurr.violations.lib.model.Violation;
 import se.bjurr.violations.lib.reports.Parser;
 
 public class JvctbPerformer {
+
   private static Logger LOG = Logger.getLogger(JvctbPerformer.class.getSimpleName());
 
   @VisibleForTesting
@@ -83,7 +85,7 @@ public class JvctbPerformer {
           @Override
           public void log(final Level level, final String string) {
             Logger.getLogger(JvctbPerformer.class.getName()).log(level, string);
-            if (level != Level.FINE) {
+            if (level != Level.FINE && config.isLogFiles()) {
               listener.getLogger().println(string);
             }
           }
@@ -194,6 +196,7 @@ public class JvctbPerformer {
     expanded.setCommentOnlyChangedFiles(config.getCommentOnlyChangedFiles());
     expanded.setMinSeverity(config.getMinSeverity());
     expanded.setKeepOldComments(config.isKeepOldComments());
+    expanded.setLogFiles(config.isLogFiles());
     expanded.setCommentTemplate(config.getCommentTemplate());
     expanded.setMaxNumberOfViolations(config.getMaxNumberOfViolations());
     expanded.setIgnorePaths(config.getIgnorePaths());
@@ -291,6 +294,7 @@ public class JvctbPerformer {
     logger.println("commentOnlyChangedFiles: " + config.getCommentOnlyChangedFiles());
     logger.println(FIELD_MINSEVERITY + ": " + config.getMinSeverity());
     logger.println(FIELD_KEEP_OLD_COMMENTS + ": " + config.isKeepOldComments());
+    logger.println(FIELD_LOG_FILES + ": " + config.isLogFiles());
     logger.println("commentTemplate: " + config.getCommentTemplate());
     logger.println("maxNumberOfViolations: " + config.getMaxNumberOfViolations());
     logger.println("ignorePaths: " + config.getIgnorePathStrings());

@@ -42,6 +42,7 @@ public class ViolationsToBitbucketServerConfig
   private int commentOnlyChangedContentContext;
   private SEVERITY minSeverity;
   private boolean keepOldComments;
+  private boolean logFiles;
   private String commentTemplate;
   @Deprecated private transient String username;
   @Deprecated private transient String password;
@@ -74,6 +75,7 @@ public class ViolationsToBitbucketServerConfig
     this.commentOnlyChangedFiles = rhs.commentOnlyChangedFiles;
     this.minSeverity = rhs.minSeverity;
     this.keepOldComments = rhs.keepOldComments;
+    this.logFiles = rhs.logFiles;
     this.commentTemplate = rhs.commentTemplate;
     this.createSingleFileCommentsTasks = rhs.createSingleFileCommentsTasks;
     this.maxNumberOfViolations = rhs.maxNumberOfViolations;
@@ -165,6 +167,9 @@ public class ViolationsToBitbucketServerConfig
       return false;
     }
     if (this.keepOldComments != other.keepOldComments) {
+      return false;
+    }
+    if (this.logFiles != other.logFiles) {
       return false;
     }
     if (this.minSeverity != other.minSeverity) {
@@ -265,6 +270,7 @@ public class ViolationsToBitbucketServerConfig
     result = prime * result + (this.createSingleFileCommentsTasks ? 1231 : 1237);
     result = prime * result + (this.credentialsId == null ? 0 : this.credentialsId.hashCode());
     result = prime * result + (this.keepOldComments ? 1231 : 1237);
+    result = prime * result + (this.logFiles ? 1231 : 1237);
     result = prime * result + (this.minSeverity == null ? 0 : this.minSeverity.hashCode());
     result = prime * result + (this.projectKey == null ? 0 : this.projectKey.hashCode());
     result = prime * result + (this.pullRequestId == null ? 0 : this.pullRequestId.hashCode());
@@ -366,6 +372,8 @@ public class ViolationsToBitbucketServerConfig
         + this.minSeverity
         + ", keepOldComments="
         + this.keepOldComments
+        + ", logFiles="
+        + this.logFiles
         + "]";
   }
 
@@ -385,6 +393,15 @@ public class ViolationsToBitbucketServerConfig
   @DataBoundSetter
   public void setKeepOldComments(final boolean keepOldComments) {
     this.keepOldComments = keepOldComments;
+  }
+
+  public boolean isLogFiles() {
+    return logFiles;
+  }
+
+  @DataBoundSetter
+  public void setLogFiles(final boolean logFiles) {
+    this.logFiles = logFiles;
   }
 
   @DataBoundSetter
