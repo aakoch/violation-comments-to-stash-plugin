@@ -85,7 +85,7 @@ public class JvctbPerformer {
           @Override
           public void log(final Level level, final String string) {
             Logger.getLogger(JvctbPerformer.class.getName()).log(level, string);
-            if (level != Level.FINE && config.isLogFiles()) {
+            if (level.intValue() > Level.FINE.intValue() && config.isLogFiles()) {
               listener.getLogger().println(string);
             }
           }
