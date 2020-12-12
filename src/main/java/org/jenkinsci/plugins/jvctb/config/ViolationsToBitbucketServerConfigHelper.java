@@ -14,4 +14,5 @@ public class ViolationsToBitbucketServerConfigHelper {
   public static final String FIELD_CREDENTIALSID = "credentialsId";
   public static final String FIELD_MINSEVERITY = "minSeverity";
   public static final String FIELD_KEEP_OLD_COMMENTS = "keepOldComments";
+  public static final String FIELD_LOG_FILES = "logFiles";
 }
