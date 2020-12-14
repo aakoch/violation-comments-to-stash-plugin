@@ -55,13 +55,11 @@
 
 	<repositories>
 		<repository>
-			<id>repo.jenkins-ci.org</id>
-			<url>https://repo.jenkins-ci.org/public/</url>
-		</repository>
-		<repository>
 			<id>github</id>
-			<name>GitHub TobseF Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/TobseF/HelloMaven</url>
+			<name>GitHub aakoch Apache Maven Packages</name>
+			<url>https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</url>
+			<releases><enabled>true</enabled></releases>
+			<snapshots><enabled>true</enabled></snapshots>
 		</repository>
 	</repositories>
 
@@ -70,7 +68,6 @@
 			<id>repo.jenkins-ci.org</id>
 			<url>https://repo.jenkins-ci.org/public/</url>
 		</pluginRepository>
-
 	</pluginRepositories>
 
 	<build>

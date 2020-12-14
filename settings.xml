@@ -14,6 +14,8 @@ xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.o
         <id>github</id>
         <name>GitHub aakoch Apache Maven Packages</name>
         <url>https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</url>
+        <releases><enabled>true</enabled></releases>
+        <snapshots><enabled>true</enabled></snapshots>
       </repository>
     </repositories>
   </profile>
