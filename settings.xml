@@ -12,8 +12,8 @@ xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.o
     <repositories>
       <repository>
         <id>github</id>
-        <name>GitHub TobseF Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/TobseF</url>
+        <name>GitHub aakoch Apache Maven Packages</name>
+        <url>https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</url>
       </repository>
     </repositories>
   </profile>
@@ -22,8 +22,8 @@ xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.o
 <servers>
   <server>
     <id>github</id>
-    <username>${env.GITHUB_USERNAME}</username>
-    <password>${env.GITHUB_TOKEN}</password>
+    <username>aakoch</username>
+    <password>1f9f48044f5a533f9586917b9944540dad03819b</password>
   </server>
 </servers>
 </settings>
