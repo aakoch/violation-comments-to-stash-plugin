@@ -68,11 +68,11 @@
 	</pluginRepositories>
 
 	<distributionManagement>
-		<repository>
+		<snapshotRepository>
 			<id>github</id>
 			<name>GitHub aakoch Apache Maven Packages</name>
 			<url>https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</url>
-		</repository>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<build>
