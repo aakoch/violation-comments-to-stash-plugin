@@ -57,13 +57,8 @@
 		<repository>
 			<id>repo.jenkins-ci.org</id>
 			<url>https://repo.jenkins-ci.org/public/</url>
-		</repository>
-		<repository>
-			<id>github</id>
-			<name>GitHub aakoch Apache Maven Packages</name>
-			<url>https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</url>
-			<releases><enabled>true</enabled></releases>
-			<snapshots><enabled>true</enabled></snapshots>
+			<releases><enabled>false</enabled></releases>
+			<snapshots><enabled>false</enabled></snapshots>
 		</repository>
 	</repositories>
 
