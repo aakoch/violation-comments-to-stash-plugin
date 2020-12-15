@@ -9,15 +9,19 @@ xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.o
 <profiles>
   <profile>
     <id>github</id>
-    <repositories>
-      <repository>
-        <id>github</id>
-        <name>GitHub aakoch Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</url>
-        <releases><enabled>true</enabled></releases>
-        <snapshots><enabled>true</enabled></snapshots>
-      </repository>
-    </repositories>
+<!--    <properties>-->
+<!--      <altSnapshotDeploymentRepository>snapshots::default::https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</altSnapshotDeploymentRepository>-->
+<!--      <altReleaseDeploymentRepository>releases::default::https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</altReleaseDeploymentRepository>-->
+<!--    </properties>-->
+<!--    <repositories>-->
+<!--      <repository>-->
+<!--        <id>github</id>-->
+<!--        <name>GitHub aakoch Apache Maven Packages</name>-->
+<!--        <url>https://maven.pkg.github.com/aakoch/violation-comments-to-stash-plugin</url>-->
+<!--        <releases><enabled>true</enabled></releases>-->
+<!--        <snapshots><enabled>true</enabled></snapshots>-->
+<!--      </repository>-->
+<!--    </repositories>-->
   </profile>
 </profiles>
 
@@ -25,7 +29,8 @@ xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.o
   <server>
     <id>github</id>
     <username>aakoch</username>
-    <password>1f9f48044f5a533f9586917b9944540dad03819b</password>
+    <password>${token}</password>
   </server>
+
 </servers>
 </settings>
